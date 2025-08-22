@@ -1,0 +1,4 @@
+*.env
+supertokens/config.yaml
+supabase/docker/volumes/*
+supabase/volumes/*
