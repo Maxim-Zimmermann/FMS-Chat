@@ -1,6 +1,8 @@
 import { RecipeListFunction, TypeInput } from "supertokens-node/types";
 import SuperTokens from "supertokens-node";
 import { SuperTokensConfig as STConfig } from "./backend";
+import * as Roles from "./roles"
+import { logger } from "../../logger/logger";
 
 export let backendConfig = (): TypeInput => {
     return {
@@ -20,7 +22,13 @@ export let backendConfig = (): TypeInput => {
 let initialized = false;
 export function ensureSuperTokensInit() {
     if (!initialized) {
-        SuperTokens.init(backendConfig());
-        initialized = true;
+        try {
+            SuperTokens.init(backendConfig());
+            initialized = true;
+            Roles.init();
+            logger.info({ origin: "SuperTokens", type: "SuperTokens:Init", message: "SuperTokens initialized" });
+        } catch (err) {
+            logger.error({ origin: "SuperTokens", type: "SuperTokens:Init:Error", message: err });
+        }
     }
 }

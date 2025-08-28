@@ -61,6 +61,6 @@ export const SuperTokensConfig: TypeInput = {
         }),
         Dashboard.init(),
         UserRoles.init(),
-        Session.init()
+        Session.init(),
     ],
 };

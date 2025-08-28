@@ -3,14 +3,17 @@ import type { NextRequest } from "next/server";
 import { SessionContainer } from "supertokens-node/recipe/session";
 import { withSession } from "supertokens-node/nextjs";
 import { ensureSuperTokensInit } from "./app/config/backendConfigUtils";
+import { logger } from "./logger/logger";
 
 ensureSuperTokensInit();
 
 export async function middleware(request: NextRequest & { session?: SessionContainer }) {
     if (request.headers.has("x-user-id")) {
-        console.warn(
-            "The FE tried to pass x-user-id, which is only supposed to be a backend internal header. Ignoring."
-        );
+        logger.warn({
+            origin: "Middleware",
+            type: "Middleware:Header:Warning",
+            message: "The FE tried to pass x-user-id, which is only supposed to be a backend internal header. Ignoring."
+        });
         request.headers.delete("x-user-id");
     }
 

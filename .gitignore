@@ -2,3 +2,4 @@
 supertokens/config.yaml
 supabase/docker/volumes/*
 supabase/volumes/*
+ai/logger/logger*[1-9].ts
