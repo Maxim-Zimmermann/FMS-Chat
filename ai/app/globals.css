@@ -1,10 +1,13 @@
 /* Base styles */
 :root {
-    --primary-color: #ff9933;
-    --primary-hover: #ff8a15;
-    --success-color: #3eb655;
-    --success-bg: #e7ffed;
-    --border-color: #e0e0e0;
+    --text: #4f5b6d;
+    --background: #f8fafc;
+    --primary: #ffffff;
+    --secondary: #e5eaf1;
+    --accent: #eb3782;
+    --success-bg: #f0fdf4;
+    --success-border: #cdf8dd;
+    --success-color: #0f7c38;
 }
 
 @font-face {
@@ -43,7 +46,8 @@ body {
 
 /* Header */
 header {
-    border-bottom: 2px solid var(--border-color);
+    background: var(--background);
+    border-bottom: 2px solid var(--secondary);
     padding: 8px;
 }
 
@@ -67,20 +71,20 @@ header ul {
 }
 
 header a {
-    color: var(--primary-color);
+    color: var(--text);
     font-weight: 600;
     text-decoration: none;
 }
 
 header a:hover {
-    color: var(--primary-hover);
+    color: var(--text);
 }
 
 /* Home page */
 #home-container {
     align-items: center;
     min-height: calc(100vh - 58px);
-    background: url("/assets/images/background.png") center/cover;
+    background: var(--background);
 }
 
 .logos {
@@ -106,7 +110,7 @@ header a:hover {
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.16);
     width: min(635px, calc(100% - 24px));
     border-radius: 16px;
-    background-color: white;
+    background-color: var(--primary);
 }
 
 .success-title {
@@ -114,8 +118,7 @@ header a:hover {
     justify-content: center;
     align-items: center;
     padding: 26px;
-    background-color: var(--success-bg);
-    color: var(--success-color);
+    color: var(--secondary);
     font-size: 20px;
     line-height: 1;
 }
@@ -125,6 +128,7 @@ header a:hover {
 }
 
 .inner-content {
+    color: var(--text);
     padding: 48px;
     text-align: center;
     display: flex;
@@ -134,6 +138,7 @@ header a:hover {
 
 /* User ID display */
 #user-id {
+    color: var(--text);
     position: relative;
     width: min(430px, calc(100% - 30px));
     margin: 11px auto 23px;
@@ -142,7 +147,7 @@ header a:hover {
     font-family: Menlo, monospace;
     line-height: 1;
     cursor: text;
-    border: 3px solid var(--primary-color);
+    border: 3px solid var(--primary);
 }
 
 /* Buttons and navigation */
@@ -153,11 +158,11 @@ header a:hover {
 
 .dashboard-button {
     padding: 8px 13px;
-    background: var(--primary-color);
-    border: 1px solid var(--primary-hover);
+    background: var(--primary);
+    border: 1px solid var(--accent);
     border-radius: 6px;
     box-shadow: 0 3px 6px rgba(255, 153, 51, 0.16);
-    color: white;
+    color: var(--text);
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
@@ -169,12 +174,12 @@ footer {
 }
 
 footer a {
-    color: var(--primary-color);
+    color: var(--text);
     font-weight: 600;
 }
 
 footer a:hover {
-    color: var(--primary-hover);
+    color: var(--text);
 }
 
 #st-tenant-selector-footer {
@@ -186,20 +191,23 @@ footer a:hover {
     flex-grow: 1;
     padding-top: 20px;
 }
+
 #st-tenant-selector-footer span {
     margin-right: 10px;
     font-size: 16px;
     font-weight: semibold;
 }
+
 #st-tenant-selector-footer button {
     background-color: transparent;
     border: 1px solid #ff9900;
-    color: #ff9900;
+    color: var(--text);
     padding: 4px 9px;
     border-radius: 4px;
     font-weight: normal;
     cursor: pointer;
 }
+
 #st-tenant-modal-backdrop {
     position: fixed;
     top: 0;
@@ -212,8 +220,9 @@ footer a:hover {
     align-items: center;
     z-index: 10001;
 }
+
 #st-tenant-modal {
-    background-color: white;
+    background-color: var(--background);
     padding: 20px;
     border-radius: 8px;
     min-width: 300px;
@@ -221,10 +230,12 @@ footer a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: left;
 }
+
 #st-tenant-modal h3 {
     margin-top: 0;
     margin-bottom: 15px;
 }
+
 #st-tenant-modal ul {
     list-style: none;
     padding: 0;
@@ -232,17 +243,21 @@ footer a:hover {
     max-height: 300px;
     overflow-y: auto;
 }
+
 #st-tenant-modal li {
     padding: 10px;
     border-bottom: 1px solid #eee;
     cursor: pointer;
 }
+
 #st-tenant-modal li:hover {
-    background-color: #f9f9f9;
+    background-color: var(--background);
 }
+
 #st-tenant-modal li:last-child {
     border-bottom: none;
 }
+
 #st-tenant-modal-close {
     float: right;
     cursor: pointer;

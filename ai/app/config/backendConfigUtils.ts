@@ -26,9 +26,9 @@ export function ensureSuperTokensInit() {
             SuperTokens.init(backendConfig());
             initialized = true;
             Roles.init();
-            logger.info({ origin: "SuperTokens", type: "SuperTokens:Init", message: "SuperTokens initialized" });
-        } catch (err) {
-            logger.error({ origin: "SuperTokens", type: "SuperTokens:Init:Error", message: err });
+            logger.info({ component: "SuperTokens", type: "SuperTokens:Init" }, "SuperTokens.init.success");
+        } catch (err: any) {
+            logger.error(err, "SuperTokens.init.error");
         }
     }
 }
