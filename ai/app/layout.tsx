@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { SuperTokensProvider } from "./components/supertokensProvider";
+import { SuperTokensProvider } from "../components/basic/supertokensProvider";
 import { SeparatorLine } from "../assets/images";
 import Link from "next/link";
 import Image from "next/image";

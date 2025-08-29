@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { CelebrateIcon } from "../../assets/images";
 import Image from "next/image";
 import { SessionAuthForNextJS } from "./sessionAuthForNextJS";
-import { getSessionForSSR } from "../util";
+import { getSessionForSSR } from "../../app/util";
 import DashboardButtons from "./dashboardButtons";
 
 export async function DashboardPage() {
