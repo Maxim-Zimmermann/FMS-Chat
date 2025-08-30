@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://api.cerbos.dev/latest/cerbos/policy/v1/TestFixture/Principals.schema.json
+# docs: https://docs.cerbos.dev/cerbos/latest/policies/compile#_sharing_test_fixtures
+
+principals:
+  user#1:
+    id: user#1
+    roles:
+      - user
+    attr: {}
+  user#2:
+    id: user#2
+    roles:
+      - user
+    attr: {}
+  admin#2:
+    id: admin#2
+    roles:
+      - admin
+    attr: {}
+  clerk#3:
+    id: clerk#3
+    roles:
+      - clerk
+    attr: {}

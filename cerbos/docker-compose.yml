@@ -1,0 +1,17 @@
+services:
+  cerbos:
+    image: ghcr.io/cerbos/cerbos:0.46.0
+    volumes:
+      - ./policies:/policies
+      - ./config:/config
+    ports:
+      - "3592:3592"
+      - "3593:3593"
+    command: ["server","--config", "/config/.cerbos.yaml"]
+
+  test-cerbos:
+    image: ghcr.io/cerbos/cerbos:0.46.0
+    volumes:
+      - ./policies:/policies
+      - ./config:/config
+    command: ["compile", "--tests", "/policies/resource_policies/tests", "/policies/resource_policies/"]

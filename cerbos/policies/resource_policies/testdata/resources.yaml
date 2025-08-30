@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://api.cerbos.dev/latest/cerbos/policy/v1/TestFixture/Resources.schema.json
+# docs: https://docs.cerbos.dev/cerbos/latest/policies/compile#_sharing_test_fixtures
+
+resources:
+  chat#1:
+    id: chat#1
+    kind: chat
+    attr:
+      ownerId: "user#2"

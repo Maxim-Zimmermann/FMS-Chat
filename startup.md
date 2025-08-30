@@ -16,10 +16,7 @@ docker run -p 3567:3567 --rm --network supabase_default \
 # start cerbos
 in `cerbos` run
 ```sh
-docker run --rm --name cerbos -d \
-  -v $(pwd)/policies:/policies \
-  -p 3592:3592 -p 3593:3593 \
-  ghcr.io/cerbos/cerbos:0.46.0
+docker compose up -d
 ```
 
 # start app
@@ -38,10 +35,7 @@ docker run -p 3567:3567 --rm --network supabase_default \
   --name supertokens \
   -d registry.supertokens.io/supertokens/supertokens-postgresql
 cd ../cerbos
-docker run --rm --name cerbos -d \
-  -v $(pwd)/policies:/policies \
-  -p 3592:3592 -p 3593:3593 \
-  ghcr.io/cerbos/cerbos:0.46.0
+docker compose up -d
 cd ../ai
 npm run dev
 ```

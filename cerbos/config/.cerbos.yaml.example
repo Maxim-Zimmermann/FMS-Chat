@@ -1,0 +1,24 @@
+server:
+  httpListenAddr: ":3592"
+  grpcListenAddr: ":3593"
+  adminAPI:
+    enabled: true
+    adminCredentials:
+      username: USERNAME # CHANGE ME
+      passwordHash: JDJ5JDEwJDM4ay9iaVlxUWt3S3JmdGVUNFduYXVHQXJFYlI5ZExyMHpBS0dzdDNLRzdoUVkycXQ1RE9XCgo= # CHANGE ME, use  `echo "PASSWORD" | htpasswd -niBC 10 cerbos | cut -d ':' -f 2 | base64` in WSL
+
+engine:
+  defaultPolicyVersion: "default"
+
+auxData:
+  jwt:
+    disableVerification: true
+
+storage:
+  driver: "disk"
+  disk:
+    directory: "/policies"
+    watchForChanges: true
+
+telemetry:
+  disabled: true
