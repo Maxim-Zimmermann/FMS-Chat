@@ -4,10 +4,11 @@
     --background: #f8fafc;
     --primary: #ffffff;
     --secondary: #e5eaf1;
-    --accent: #eb3782;
+    --accent: #1e293b;
     --success-bg: #f0fdf4;
-    --success-border: #cdf8dd;
+    --success-border: #8feeb2;
     --success-color: #0f7c38;
+    --default-border-radius: 10px;
 }
 
 @font-face {

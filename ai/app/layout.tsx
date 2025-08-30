@@ -20,50 +20,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en">
             <body className={`${inter.className} app-wrapper`}>
                 <SuperTokensProvider>
-                    <div className="App app-container">
-                        <header>
-                            <nav className="header-container">
-                                <Link href="/">
-                                    <img src="/ST.svg" alt="SuperTokens" />
-                                </Link>
-                                <ul className="header-container-right">
-                                    <li>
-                                        <a
-                                            href="https://supertokens.com/docs//"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            Docs
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://github.com/supertokens/create-supertokens-app"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            CLI Repo
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </header>
-                        <div className="fill" id="home-container">
-                            <ComponentWrapper>
-                                <>
-                                    {children}
-                                    <footer>
-                                        Built with ❤️ by the folks at{" "}
-                                        <a href="https://supertokens.io" target="_blank" rel="noopener noreferrer">
-                                            supertokens.com
-                                        </a>
-                                        .
-                                    </footer>
-                                    <Image className="separator-line" src={SeparatorLine} alt="separator" />
-                                </>
-                            </ComponentWrapper>
-                        </div>
-                    </div>
+                    <ComponentWrapper>
+                        <>
+                            {children}
+                        </>
+                    </ComponentWrapper>
                 </SuperTokensProvider>
             </body>
         </html>

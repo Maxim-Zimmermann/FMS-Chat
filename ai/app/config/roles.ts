@@ -1,13 +1,13 @@
 import { logger } from "@/logger/logger";
 import UserRoles from "supertokens-node/recipe/userroles";
 
-export function createRole(params: { name: string }) {
+export async function createRole(params: { name: string }) {
     try {
-        UserRoles.createNewRoleOrAddPermissions(params.name, []);
+        await UserRoles.createNewRoleOrAddPermissions(params.name, []);
     } catch (error) {
-        logger.error({ component: "SuperTokens", message: `Error creating role ${params.name}`, error: error }, "SuperTokens.init.roles.createRole.error");
+        logger.error(error, "SuperTokens.init.roles.createRole.error");
     } finally {
-        logger.info({ component: "SuperTokens", message: `Created role ${params.name}` }, "SuperTokens.init.roles.createRole.success");
+        logger.info({ component: "SuperTokens", roleName: `${params.name}` }, "SuperTokens.init.roles.createRole.success");
     }
 }
 
