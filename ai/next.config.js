@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // serverExternalPackages: ["pino", "pino-logflare"]
+    // serverExternalPackages: ["sequelize"]
 };
 
 module.exports = nextConfig;

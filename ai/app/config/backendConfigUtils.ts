@@ -1,7 +1,10 @@
+"use server"
+
 import { RecipeListFunction, TypeInput } from "supertokens-node/types";
 import SuperTokens from "supertokens-node";
 import { SuperTokensConfig as STConfig } from "./backend";
 import * as Roles from "./roles"
+import * as Db from "@/models/init-db";
 import { logger } from "../../logger/logger";
 
 export let backendConfig = (): TypeInput => {
@@ -26,9 +29,42 @@ export function ensureSuperTokensInit() {
             SuperTokens.init(backendConfig());
             initialized = true;
             Roles.init();
-            logger.info({ component: "SuperTokens"}, "SuperTokens.init.success");
         } catch (err: any) {
             logger.error(err, "SuperTokens.init.error");
+        } finally {
+            logger.info({ component: "SuperTokens" }, "SuperTokens.init.success");
+            initApp();
         }
+    }
+}
+
+function initApp() {
+    try {
+        initDb();
+        initCerbos();
+    } catch (err) {
+        logger.error(err, "App.init.error");
+    } finally {
+        logger.info({ component: "App" }, "App.init.success");
+    }
+}
+
+function initDb(): void {
+    try {
+        Db.init();
+    } catch (err) {
+        logger.error(err, "Db.init.error");
+    } finally {
+        logger.info({ component: "Db" }, "Db.init.success");
+    }
+}
+
+function initCerbos() {
+    try {
+        // Initialize Cerbos
+    } catch (err) {
+        logger.error(err, "Cerbos.init.error");
+    } finally {
+        logger.info({ component: "Cerbos" }, "Cerbos.init.success");
     }
 }
